@@ -118,10 +118,6 @@ Audio-2-MIDI-GitHub/
 |-- README.ja.md         # Japanese
 ```
 
-## ✅ Verification
-
-All three editions passed dependency checks, GUI creation tests, real Basic Pitch transcription, Audio Separator processing, PyInstaller builds, and packaged application startup checks. Verified providers are `CPUExecutionProvider`, `CUDAExecutionProvider`, and `DmlExecutionProvider`.
-
 ## ⚖️ Third-Party Software
 
 This project uses Audio Separator, Basic Pitch, ONNX Runtime, PyTorch, PyQt6, and FFmpeg. Before redistribution, review the licenses and attribution requirements for every dependency, model, FFmpeg build, icon, and logo.
