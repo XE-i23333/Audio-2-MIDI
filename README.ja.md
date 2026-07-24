@@ -12,15 +12,13 @@ Audio 2 MIDI は、Audio Separator と [Basic Pitch](https://github.com/spotify/
 
 ## ✨ 機能
 
-- ボーカルまたは伴奏ステムを分離。
-- 元の音声または分離したステムを MIDI に変換。
-- MIDI、ノート CSV、Basic Pitch モデル出力 NPZ、MIDI プレビュー WAV を保存。
-- オンセット閾値、フレーム閾値、最短ノート長、周波数範囲、ノート結合時間を調整。
-- WAV、MP3、OGG、FLAC、M4A を入力可能。
-- English、簡体中文、日本語の UI を搭載。
-- 進捗、処理速度、ログを確認可能。
-
-このリリースの Basic Pitch の初期値は、オンセット閾値が `0`、Merge Notes が `50 ms` です。
+- 🎤 ボーカルまたは伴奏ステムを分離。
+- 🎹 元の音声または分離したステムを MIDI に変換。
+- 📥 MIDI、ノート CSV、Basic Pitch モデル出力 NPZ、MIDI プレビュー WAV を保存。
+- 🎛️ オンセット閾値、フレーム閾値、最短ノート長、周波数範囲、ノート結合時間を調整。
+- 🔊 WAV、MP3、OGG、FLAC、M4A を入力可能。
+- 🌐 English、簡体中文、日本語の UI を搭載。
+- 📊 進捗、処理速度、ログを確認可能。
 
 > 💡 **UVR-MDX-NET-Inst HQ 5** の分離品質が最も高く、おすすめです。
 
