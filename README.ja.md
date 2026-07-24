@@ -28,11 +28,11 @@ Audio 2 MIDI は、Audio Separator と [Basic Pitch](https://github.com/spotify/
 
 ## 🚀 エディションの選択
 
-| エディション | 推奨ハードウェア | 推論バックエンド | 検証済みサイズ |
-| --- | --- | --- | ---: |
-| CPU | 対応 GPU がない環境、互換性を優先する環境 | ONNX Runtime CPU | 約 1.38 GB |
-| CUDA | NVIDIA GPU | CUDA 12.4 (cu124) | 約 5.82 GB |
-| DirectML | AMD、Intel、NVIDIA GPU | DirectML / DML Execution Provider | 約 2.04 GB |
+| エディション | 推奨ハードウェア | 推論バックエンド |
+| --- | --- | --- |
+| CPU | 対応 GPU がない環境、互換性を優先する環境 | ONNX Runtime CPU |
+| CUDA | NVIDIA GPU | CUDA 12.4 (cu124) |
+| DirectML | AMD、Intel、NVIDIA GPU | DirectML / DML Execution Provider |
 
 CUDA 版には CUDA 12.4 以上と互換性のある NVIDIA ドライバーが必要です。DirectML 版には Windows 10/11、DirectX 12 対応 GPU、最新のグラフィックスドライバーが必要です。不明な場合は CPU 版を使用してください。
 
