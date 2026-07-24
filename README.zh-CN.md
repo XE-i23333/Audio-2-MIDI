@@ -40,7 +40,7 @@ CUDA 版至少需要 CUDA 12.4 的 NVIDIA 驱动。DirectML 版需要 Windows 10
 
 ## 📦 下载和运行
 
-普通用户应从仓库的 **GitHub Releases** 页面下载程序，不要下载自动生成的 Source code 压缩包。
+普通用户应从 [GitHub Releases](../../releases/latest) 页面下载程序，不要下载自动生成的 Source code 压缩包。
 
 1. 下载对应版本的完整压缩包或全部分卷。
 2. 如果是分卷，将所有分卷放在同一目录，并从 `.7z.001` 开始解压。
@@ -55,7 +55,7 @@ CUDA 版至少需要 CUDA 12.4 的 NVIDIA 驱动。DirectML 版需要 Windows 10
 
 - 64 位 Windows 10 或 Windows 11。
 - 64 位 Python 3.10。
-- 已自带 FFmpeg，无需配置环境变量。
+- 从 [FFmpeg builds 页面](https://www.gyan.dev/ffmpeg/builds/) 下载 FFmpeg full-shared 版本，将 `bin` 文件夹复制到每个版本目录（`cpu/`、`cuda/`、`directml/`），再重命名为 `ffmpeg`。
 - CUDA 版需要 NVIDIA GPU 和兼容驱动；DirectML 版需要支持 DirectX 12 的 GPU。
 
 选择一个版本目录，并在目录内创建虚拟环境。
@@ -121,18 +121,6 @@ Audio-2-MIDI-GitHub/
 |-- README.ja.md         # 日本語
 `-- RELEASENOTE.md
 ```
-
-## 🌐 GitHub 发布
-
-源码提交到仓库，打包成品上传到 GitHub Releases。不要提交虚拟环境、`build`、`dist`、FFmpeg 二进制文件、下载模型、本地设置或测试音频。
-
-CUDA 成品无法作为单个 GitHub Release 文件上传，DirectML 成品也接近限制，建议创建 1900 MB 的 7-Zip 分卷：
-
-```bat
-7z a -t7z -mx=9 -v1900m "Audio-2-MIDI-CUDA-v0.1.0.7z" "cuda\dist\Audio 2 MIDI (CUDA)\*"
-```
-
-CPU 版通常可以上传单个压缩包。应用程序成品应使用 GitHub Releases 发布，不建议放入 Git LFS。
 
 ## ✅ 验证状态
 
