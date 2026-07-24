@@ -5,7 +5,6 @@ app_name = 'Audio 2 MIDI (CUDA)'
 datas = [
     ('ffmpeg', 'ffmpeg'),
     ('icon.ico', '.'),
-    ('logo.png', '.'),
     ('Lib\\site-packages\\basic_pitch\\saved_models\\icassp_2022', 'basic_pitch/saved_models/icassp_2022'),
 ]
 binaries = []
