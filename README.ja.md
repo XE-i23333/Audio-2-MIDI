@@ -54,7 +54,7 @@ CUDA 版には CUDA 12.4 以上と互換性のある NVIDIA ドライバーが�
 必要な環境：
 
 - 64 ビット版 Windows 10 または Windows 11。
-- 64 ビット版 Python 3.10。
+- Python ≤ 3.13.0（ビルド済み EXE は Python 3.10 でパッケージされています）。
 - [FFmpeg builds ページ](https://www.gyan.dev/ffmpeg/builds/) から FFmpeg full-shared をダウンロードし、`bin` フォルダーを各エディションディレクトリ（`cpu/`、`cuda/`、`directml/`）にコピーしてから `ffmpeg` にリネームします。
 - CUDA 版には NVIDIA GPU と互換ドライバー、DirectML 版には DirectX 12 対応 GPU。
 
@@ -119,7 +119,6 @@ Audio-2-MIDI-GitHub/
 |-- README.md            # English
 |-- README.zh-CN.md      # 简体中文
 |-- README.ja.md         # 日本語
-`-- RELEASENOTE.md
 ```
 
 ## ✅ 検証状況
