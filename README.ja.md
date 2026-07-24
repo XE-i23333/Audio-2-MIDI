@@ -34,7 +34,7 @@ Audio 2 MIDI は、Audio Separator と [Basic Pitch](https://github.com/spotify/
 | CUDA | NVIDIA GPU | CUDA 12.4 (cu124) |
 | DirectML | AMD、Intel、NVIDIA GPU、DX12 必須 | DirectML Execution Provider |
 
-CUDA 版には CUDA 12.4 以上と互換性のある NVIDIA ドライバーが必要です。DirectML 版には Windows 10/11、DirectX 12 対応 GPU、最新のグラフィックスドライバーが必要です。古い Intel 内蔵グラフィック（Intel UHD 620 で動作確認済）でも DirectML 経由で実行可能です。不明な場合は CPU 版を使用してください。
+CUDA 版には CUDA 12.4 以上と互換性のある NVIDIA ドライバーが必要です。DirectML 版には Windows 10/11、DirectX 12 対応 GPU、最新のグラフィックスドライバーが必要です。古い Intel 内蔵GPU（Intel UHD 620 で動作確認済）でも DirectML 経由で実行可能です。不明な場合は CPU 版を使用してください。
 
 ## 📦 ダウンロードと実行
 
