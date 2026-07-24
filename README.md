@@ -42,10 +42,9 @@ The CUDA edition requires an NVIDIA driver compatible with at least CUDA 12.4. T
 
 Regular users should download an application package from [GitHub Releases](../../releases/latest), not the automatically generated Source code archive.
 
-1. Download the complete archive or every volume for your edition.
-2. For a split archive, place all volumes in one directory and extract from `.7z.001`.
-3. Extract the complete application directory. Do not copy only the EXE.
-4. Run `Audio 2 MIDI (CPU).exe`, `Audio 2 MIDI (CUDA).exe`, or `Audio 2 MIDI (DirectML).exe`.
+1. Download the archive for your edition.
+2. Extract the complete application directory. Do not copy only the EXE.
+3. Run `Audio 2 MIDI (CPU).exe`, `Audio 2 MIDI (CUDA).exe`, or `Audio 2 MIDI (DirectML).exe`.
 
 The first use of a separation model may require an internet connection. Downloaded models are stored under `models/audio-separator-models` beside the executable. The `UVR-MDX-NET-Inst_HQ_5.onnx` model is included by default.
 
