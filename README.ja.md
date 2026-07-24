@@ -8,7 +8,7 @@
   <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a> | <strong>日本語</strong>
 </p>
 
-Audio 2 MIDI は、Audio Separator と Basic Pitch を組み合わせた Windows 向けデスクトップアプリです。音源分離、音声から MIDI への変換、ノート CSV の出力、MIDI プレビュー音声の生成に対応し、CPU、NVIDIA CUDA、DirectML の 3 エディションを提供します。
+Audio 2 MIDI は、Audio Separator と [Basic Pitch](https://github.com/spotify/basic-pitch) を組み合わせた Windows 向けデスクトップアプリです。音源分離、音声から MIDI への変換、ノート CSV の出力、MIDI プレビュー音声の生成に対応し、CPU、NVIDIA CUDA、DirectML の 3 エディションを提供します。
 
 ## ✨ 機能
 
@@ -58,6 +58,8 @@ CUDA 版には CUDA 12.4 以上と互換性のある NVIDIA ドライバーが�
 - [FFmpeg builds ページ](https://www.gyan.dev/ffmpeg/builds/) から FFmpeg full-shared をダウンロードし、`bin` フォルダーを各エディションディレクトリ（`cpu/`、`cuda/`、`directml/`）にコピーしてから `ffmpeg` にリネームします。
 - CUDA 版には NVIDIA GPU と互換ドライバー、DirectML 版には DirectX 12 対応 GPU。
 
+### ソースから実行
+
 エディションを 1 つ選び、そのディレクトリ内に仮想環境を作成します。
 
 <details>
@@ -90,9 +92,9 @@ uv run main.py
 
 `cuda` と `directml` でも同じ手順を使用しますが、必ず各ディレクトリの `requirements.txt` をインストールしてください。3 エディションで仮想環境を共有しないでください。
 
-## 🏗️ Windows パッケージのビルド
+### 手動ビルド
 
-仮想環境、依存パッケージ、`ffmpeg` を準備した後、対象ディレクトリで実行します：
+仮想環境、依存パッケージ、`ffmpeg` を準備した後、ビルドスクリプトを実行します：
 
 ```bat
 build.bat
@@ -105,8 +107,6 @@ cpu/dist/Audio 2 MIDI (CPU)/
 cuda/dist/Audio 2 MIDI (CUDA)/
 directml/dist/Audio 2 MIDI (DirectML)/
 ```
-
-スクリプトは `icon.ico` を EXE と同じディレクトリにもコピーします。`_internal`、FFmpeg、ランタイム、リソースが必要なため、リリース時は出力ディレクトリ全体を圧縮してください。
 
 ## 📁 リポジトリ構成
 
