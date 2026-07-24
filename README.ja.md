@@ -113,6 +113,9 @@ Audio-2-MIDI-GitHub/
 |-- cuda/                # NVIDIA CUDA のソース、依存関係、ビルド設定
 |-- directml/            # DirectML のソース、依存関係、ビルド設定
 |-- .gitignore
+|-- LICENSE              # Apache-2.0
+|-- logo.png
+|-- screenshot.png
 |-- README.md            # English
 |-- README.zh-CN.md      # 简体中文
 |-- README.ja.md         # 日本語
