@@ -466,7 +466,7 @@ class Converter(QWidget):
             self.progress.repaint()
 
     def run_conversion(self):
-        input_file = self.file_input.text().strip()
+        input_file = self.file_input.text().strip().strip('"\'')
         if not input_file:
             QMessageBox.warning(self, self._t("warning"), self._t("select_input"))
             return
