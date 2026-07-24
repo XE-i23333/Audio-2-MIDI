@@ -52,7 +52,7 @@ CUDA 版には CUDA 12.4 以上と互換性のある NVIDIA ドライバーが�
 
 - 64 ビット版 Windows 10 または Windows 11。
 - Python ≤ 3.13.0（ビルド済み EXE は Python 3.10 でパッケージされています）。
-- [FFmpeg builds ページ](https://www.gyan.dev/ffmpeg/builds/) から FFmpeg full-shared をダウンロードし、`bin` フォルダーを手動で実行またはビルドするエディションディレクトリ（`cpu/`、`cuda/`、または `directml/`）にコピーしてから `ffmpeg` にリネームします。
+- [FFmpeg builds ページ](https://www.gyan.dev/ffmpeg/builds/) から FFmpeg full-shared をダウンロードします（通常 7 個の DLL と 3 個の EXE が含まれます）。`bin` フォルダーを手動で実行またはビルドするエディションディレクトリ（`cpu/`、`cuda/`、または `directml/`）にコピーしてから `ffmpeg` にリネームします。
 - CUDA 版には NVIDIA GPU と互換ドライバー、DirectML 版には DirectX 12 対応 GPU。
 
 ### ソースから実行
