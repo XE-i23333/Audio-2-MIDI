@@ -40,7 +40,7 @@ The CUDA edition requires an NVIDIA driver compatible with at least CUDA 12.4. T
 
 ## 📦 Download and Run
 
-Regular users should download an application package from **GitHub Releases**, not the automatically generated Source code archive.
+Regular users should download an application package from [GitHub Releases](../../releases/latest), not the automatically generated Source code archive.
 
 1. Download the complete archive or every volume for your edition.
 2. For a split archive, place all volumes in one directory and extract from `.7z.001`.
@@ -55,7 +55,7 @@ Requirements:
 
 - 64-bit Windows 10 or Windows 11.
 - 64-bit Python 3.10.
-- FFmpeg is bundled — no environment variable setup required.
+- Download FFmpeg full-shared from the [FFmpeg builds page](https://www.gyan.dev/ffmpeg/builds/), copy the `bin` folder into each edition directory (`cpu/`, `cuda/`, `directml/`), and rename it to `ffmpeg`.
 - An NVIDIA GPU and compatible driver for CUDA, or a DirectX 12 GPU for DirectML.
 
 Choose one edition and create its environment inside that directory.
@@ -121,18 +121,6 @@ Audio-2-MIDI-GitHub/
 |-- README.ja.md         # Japanese
 `-- RELEASENOTE.md
 ```
-
-## 🌐 Publishing on GitHub
-
-Commit source code to the repository and attach packaged applications to GitHub Releases. Do not commit virtual environments, `build`, `dist`, FFmpeg binaries, downloaded models, local settings, or test media.
-
-The CUDA package is too large for a single GitHub Release asset, and the DirectML package is close to the limit. Create 1900 MB 7-Zip volumes:
-
-```bat
-7z a -t7z -mx=9 -v1900m "Audio-2-MIDI-CUDA-v0.1.0.7z" "cuda\dist\Audio 2 MIDI (CUDA)\*"
-```
-
-The CPU package can normally be uploaded as one archive. Use GitHub Releases rather than Git LFS for downloadable application builds.
 
 ## ✅ Verification
 
