@@ -42,10 +42,9 @@ CUDA 版至少需要 CUDA 12.4 的 NVIDIA 驱动。DirectML 版需要 Windows 10
 
 普通用户应从 [GitHub Releases](../../releases/latest) 页面下载程序，不要下载自动生成的 Source code 压缩包。
 
-1. 下载对应版本的完整压缩包或全部分卷。
-2. 如果是分卷，将所有分卷放在同一目录，并从 `.7z.001` 开始解压。
-3. 完整解压整个程序目录，不要只复制 EXE。
-4. 运行 `Audio 2 MIDI (CPU).exe`、`Audio 2 MIDI (CUDA).exe` 或 `Audio 2 MIDI (DirectML).exe`。
+1. 下载对应版本的压缩包。
+2. 完整解压整个程序目录，不要只复制 EXE。
+3. 运行 `Audio 2 MIDI (CPU).exe`、`Audio 2 MIDI (CUDA).exe` 或 `Audio 2 MIDI (DirectML).exe`。
 
 首次使用某个分离模型时可能需要联网下载。模型会保存在 EXE 同目录的 `models/audio-separator-models` 中。默认已包含 `UVR-MDX-NET-Inst_HQ_5.onnx`。
 
