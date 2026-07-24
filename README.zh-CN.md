@@ -32,9 +32,9 @@ Audio 2 MIDI 是一个 Windows 桌面音频处理工具，结合 Audio Separator
 | --- | --- | --- |
 | CPU | 无可用 GPU，或追求最高兼容性 | ONNX Runtime CPU |
 | CUDA | NVIDIA GPU | CUDA 12.4 (cu124) |
-| DirectML | AMD、Intel 或 NVIDIA GPU | DirectML / DML Execution Provider |
+| DirectML | AMD、Intel 或 NVIDIA GPU，需要 DX12 | DirectML Execution Provider |
 
-CUDA 版至少需要 CUDA 12.4 的 NVIDIA 驱动。DirectML 版需要 Windows 10/11、DirectX 12 支持和较新的显卡驱动。不确定设备是否兼容时建议使用 CPU 版。
+CUDA 版至少需要 CUDA 12.4 的 NVIDIA 驱动。DirectML 版需要 Windows 10/11、DirectX 12 支持和较新的显卡驱动。即使是较老的英特尔核显（如 Intel UHD 620）也可通过 DirectML 运行。不确定设备是否兼容时建议使用 CPU 版。
 
 ## 📦 下载和运行
 
