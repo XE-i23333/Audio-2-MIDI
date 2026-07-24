@@ -216,6 +216,9 @@ def run_separator(input_file, output_dir, model_filename, single_stem, progress_
         dst.unlink()
     chosen_file.rename(dst)
 
-    sep_total = int((dw + sw) * 100)
+    if separate_only_mode:
+        sep_total = 99
+    else:
+        sep_total = int((dw + sw) * 100)
     progress_callback(sep_total, "Separate done")
     return dst

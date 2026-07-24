@@ -23,7 +23,7 @@ class Converter(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Audio 2 MIDI v0.1.0 (DirectML)")
+        self.setWindowTitle("Audio 2 MIDI v0.5.0 (DirectML)")
         resource_base = Path(sys._MEIPASS) if getattr(sys, "frozen", False) else Path(__file__).parent
         self.setWindowIcon(QIcon(str(resource_base / "icon.ico")))
         layout = QVBoxLayout()
