@@ -42,10 +42,9 @@ CUDA 版には CUDA 12.4 以上と互換性のある NVIDIA ドライバーが�
 
 一般ユーザーは、自動生成される Source code ではなく、[GitHub Releases](../../releases/latest) からアプリをダウンロードしてください。
 
-1. 使用するエディションの完全なアーカイブ、またはすべての分割ファイルをダウンロードします。
-2. 分割アーカイブの場合は、全ファイルを同じフォルダーに置き、`.7z.001` から展開します。
-3. アプリのフォルダー全体を展開します。EXE だけをコピーしないでください。
-4. `Audio 2 MIDI (CPU).exe`、`Audio 2 MIDI (CUDA).exe`、または `Audio 2 MIDI (DirectML).exe` を実行します。
+1. 使用するエディションのアーカイブをダウンロードします。
+2. アプリのフォルダー全体を展開します。EXE だけをコピーしないでください。
+3. `Audio 2 MIDI (CPU).exe`、`Audio 2 MIDI (CUDA).exe`、または `Audio 2 MIDI (DirectML).exe` を実行します。
 
 分離モデルの初回使用時にはインターネット接続が必要になる場合があります。モデルは EXE と同じ場所の `models/audio-separator-models` に保存されます。デフォルトで `UVR-MDX-NET-Inst_HQ_5.onnx` が含まれています。
 
