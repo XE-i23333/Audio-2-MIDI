@@ -40,7 +40,7 @@ CUDA 版には CUDA 12.4 以上と互換性のある NVIDIA ドライバーが�
 
 ## 📦 ダウンロードと実行
 
-一般ユーザーは、自動生成される Source code ではなく、**GitHub Releases** からアプリをダウンロードしてください。
+一般ユーザーは、自動生成される Source code ではなく、[GitHub Releases](../../releases/latest) からアプリをダウンロードしてください。
 
 1. 使用するエディションの完全なアーカイブ、またはすべての分割ファイルをダウンロードします。
 2. 分割アーカイブの場合は、全ファイルを同じフォルダーに置き、`.7z.001` から展開します。
@@ -55,7 +55,7 @@ CUDA 版には CUDA 12.4 以上と互換性のある NVIDIA ドライバーが�
 
 - 64 ビット版 Windows 10 または Windows 11。
 - 64 ビット版 Python 3.10。
-- FFmpeg はバンドルされています。環境変数の設定は不要です。
+- [FFmpeg builds ページ](https://www.gyan.dev/ffmpeg/builds/) から FFmpeg full-shared をダウンロードし、`bin` フォルダーを各エディションディレクトリ（`cpu/`、`cuda/`、`directml/`）にコピーしてから `ffmpeg` にリネームします。
 - CUDA 版には NVIDIA GPU と互換ドライバー、DirectML 版には DirectX 12 対応 GPU。
 
 エディションを 1 つ選び、そのディレクトリ内に仮想環境を作成します。
@@ -121,18 +121,6 @@ Audio-2-MIDI-GitHub/
 |-- README.ja.md         # 日本語
 `-- RELEASENOTE.md
 ```
-
-## 🌐 GitHub での公開
-
-ソースコードはリポジトリにコミットし、ビルド済みアプリは GitHub Releases に添付します。仮想環境、`build`、`dist`、FFmpeg バイナリ、ダウンロード済みモデル、ローカル設定、テスト音声はコミットしないでください。
-
-CUDA 版は 1 つの GitHub Release ファイルとして公開できないサイズで、DirectML 版も制限に近いため、1900 MB の 7-Zip 分割アーカイブを推奨します：
-
-```bat
-7z a -t7z -mx=9 -v1900m "Audio-2-MIDI-CUDA-v0.1.0.7z" "cuda\dist\Audio 2 MIDI (CUDA)\*"
-```
-
-CPU 版は通常、1 つのアーカイブとして公開できます。アプリ配布には Git LFS ではなく GitHub Releases を使用してください。
 
 ## ✅ 検証状況
 
