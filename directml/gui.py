@@ -359,11 +359,9 @@ class Converter(QWidget):
             shutil.rmtree(temp_dir, ignore_errors=True)
             msg = f"Cleaned up temp directory: {temp_dir}"
             logging.info(msg)
-            print(msg)
         else:
             msg = "No temp directory to clean up"
             logging.info(msg)
-            print(msg)
         sig(100, "Done")
 
     def load_settings(self):
