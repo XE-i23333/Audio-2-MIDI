@@ -12,15 +12,13 @@ Audio 2 MIDI is a Windows desktop application that combines Audio Separator and 
 
 ## ✨ Features
 
-- Separate vocals or instrumental stems.
-- Convert original audio or a separated stem to MIDI.
-- Export MIDI, note CSV, Basic Pitch model output (NPZ), and MIDI preview audio (WAV).
-- Tune onset/frame thresholds, minimum note length, frequency range, and note merging.
-- Open WAV, MP3, OGG, FLAC, and M4A files.
-- Use the interface in English, Simplified Chinese, or Japanese.
-- Monitor progress, processing speed, and logs.
-
-Default Basic Pitch settings in this release include an onset threshold of `0` and a merge-notes interval of `50 ms`.
+- 🎤 Separate vocals or instrumental stems.
+- 🎹 Convert original audio or a separated stem to MIDI.
+- 📥 Export MIDI, note CSV, Basic Pitch model output (NPZ), and MIDI preview audio (WAV).
+- 🎛️ Tune onset/frame thresholds, minimum note length, frequency range, and note merging.
+- 🔊 Open WAV, MP3, OGG, FLAC, and M4A files.
+- 🌐 Use the interface in English, Simplified Chinese, or Japanese.
+- 📊 Monitor progress, processing speed, and logs.
 
 > 💡 **UVR-MDX-NET-Inst HQ 5** offers the best separation quality — recommended as the default choice.
 
