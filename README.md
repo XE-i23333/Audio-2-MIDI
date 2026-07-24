@@ -54,7 +54,7 @@ The first use of a separation model may require an internet connection. Download
 Requirements:
 
 - 64-bit Windows 10 or Windows 11.
-- 64-bit Python 3.10.
+- Python ≤ 3.13.0 (the pre-built EXE is packaged with Python 3.10).
 - Download FFmpeg full-shared from the [FFmpeg builds page](https://www.gyan.dev/ffmpeg/builds/), copy the `bin` folder into each edition directory (`cpu/`, `cuda/`, `directml/`), and rename it to `ffmpeg`.
 - An NVIDIA GPU and compatible driver for CUDA, or a DirectX 12 GPU for DirectML.
 
@@ -119,7 +119,6 @@ Audio-2-MIDI-GitHub/
 |-- README.md            # English
 |-- README.zh-CN.md      # Simplified Chinese
 |-- README.ja.md         # Japanese
-`-- RELEASENOTE.md
 ```
 
 ## ✅ Verification
