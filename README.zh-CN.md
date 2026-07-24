@@ -12,15 +12,13 @@ Audio 2 MIDI 是一个 Windows 桌面音频处理工具，结合 Audio Separator
 
 ## ✨ 功能
 
-- 分离人声或伴奏音轨。
-- 将原始音频或分离后的音轨转换为 MIDI。
-- 导出 MIDI、音符 CSV、Basic Pitch 模型输出 NPZ 和 MIDI 音频预览 WAV。
-- 调整起始阈值、帧阈值、最短音符长度、频率范围及相邻音符合并时间。
-- 支持 WAV、MP3、OGG、FLAC 和 M4A。
-- 提供简体中文、English 和日本語界面。
-- 查看实时进度、处理速度和运行日志。
-
-本版本的 Basic Pitch 默认起始阈值为 `0`，Merge Notes 默认值为 `50 ms`。
+- 🎤 分离人声或伴奏音轨。
+- 🎹 将原始音频或分离后的音轨转换为 MIDI。
+- 📥 导出 MIDI、音符 CSV、Basic Pitch 模型输出 NPZ 和 MIDI 音频预览 WAV。
+- 🎛️ 调整起始阈值、帧阈值、最短音符长度、频率范围及相邻音符合并时间。
+- 🔊 支持 WAV、MP3、OGG、FLAC 和 M4A。
+- 🌐 提供简体中文、English 和日本語界面。
+- 📊 查看实时进度、处理速度和运行日志。
 
 > 💡 **UVR-MDX-NET-Inst HQ 5** 分离效果最好，推荐优先选择。
 
