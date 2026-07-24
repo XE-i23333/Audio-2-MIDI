@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+cpu/Scripts/
+cpu/Lib/
+cpu/include/
+cpu/pyvenv.cfg
+cuda/Scripts/
+cuda/Lib/
+cuda/include/
+cuda/pyvenv.cfg
+directml/Scripts/
+directml/Lib/
+directml/include/
+directml/pyvenv.cfg
+
+# Downloaded models
+models/
+
+# Build outputs
+*.exe
+*.manifest
+*.pyd
+*.7z
+*.7z.001
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Local user config
+settings.ini
