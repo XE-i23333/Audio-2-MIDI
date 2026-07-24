@@ -118,10 +118,6 @@ Audio-2-MIDI-GitHub/
 |-- README.ja.md         # 日本語
 ```
 
-## ✅ 验证状态
-
-三个版本均已通过依赖检查、GUI 创建、实际 Basic Pitch 转录、Audio Separator 分离、PyInstaller 构建和成品启动检查。确认使用的后端分别为 `CPUExecutionProvider`、`CUDAExecutionProvider` 和 `DmlExecutionProvider`。
-
 ## ⚖️ 第三方软件
 
 本项目使用 Audio Separator、Basic Pitch、ONNX Runtime、PyTorch、PyQt6 和 FFmpeg。重新发布前，请核对所有依赖、模型、FFmpeg 构建、图标和 Logo 的许可证及署名要求。
