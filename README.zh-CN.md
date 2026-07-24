@@ -8,7 +8,7 @@
   <a href="README.md">English</a> | <strong>简体中文</strong> | <a href="README.ja.md">日本語</a>
 </p>
 
-Audio 2 MIDI 是一个 Windows 桌面音频处理工具，结合 Audio Separator 与 Basic Pitch，支持音轨分离、音频转 MIDI、音符 CSV 导出和 MIDI 音频预览。仓库提供 CPU、NVIDIA CUDA 和 DirectML 三个版本。
+Audio 2 MIDI 是一个 Windows 桌面音频处理工具，结合 Audio Separator 与 [Basic Pitch](https://github.com/spotify/basic-pitch)，支持音轨分离、音频转 MIDI、音符 CSV 导出和 MIDI 音频预览。仓库提供 CPU、NVIDIA CUDA 和 DirectML 三个版本。
 
 ## ✨ 功能
 
@@ -58,6 +58,8 @@ CUDA 版至少需要 CUDA 12.4 的 NVIDIA 驱动。DirectML 版需要 Windows 10
 - 从 [FFmpeg builds 页面](https://www.gyan.dev/ffmpeg/builds/) 下载 FFmpeg full-shared 版本，将 `bin` 文件夹复制到每个版本目录（`cpu/`、`cuda/`、`directml/`），再重命名为 `ffmpeg`。
 - CUDA 版需要 NVIDIA GPU 和兼容驱动；DirectML 版需要支持 DirectX 12 的 GPU。
 
+### 源码运行
+
 选择一个版本目录，并在目录内创建虚拟环境。
 
 <details>
@@ -90,9 +92,9 @@ uv run main.py
 
 `cuda` 和 `directml` 使用相同步骤，但必须安装对应目录中的 `requirements.txt`，不要让三个版本共用同一个虚拟环境。
 
-## 🏗️ 构建 Windows 成品
+### 手动构建
 
-准备好虚拟环境、依赖和 `ffmpeg` 目录后，在对应版本目录运行：
+准备好虚拟环境、依赖和 `ffmpeg` 目录后，运行构建脚本：
 
 ```bat
 build.bat
@@ -105,8 +107,6 @@ cpu/dist/Audio 2 MIDI (CPU)/
 cuda/dist/Audio 2 MIDI (CUDA)/
 directml/dist/Audio 2 MIDI (DirectML)/
 ```
-
-脚本会将 `icon.ico` 复制到 EXE 同目录。发布时必须压缩并上传完整成品目录，因为 `_internal`、FFmpeg、运行库和资源文件都不可缺少。
 
 ## 📁 仓库结构
 
