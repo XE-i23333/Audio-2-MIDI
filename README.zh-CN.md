@@ -25,7 +25,7 @@ Audio 2 MIDI 是一个 Windows 桌面音频处理工具，结合 Audio Separator
 > 💡 **UVR-MDX-NET-Inst HQ 5** 分离效果最好，推荐优先选择。
 
 <p align="center">
-  <img src="screenshot.jpg" alt="Audio 2 MIDI 截图" width="720">
+  <img src="screenshot.png" alt="Audio 2 MIDI 截图" width="720">
 </p>
 
 ## 🚀 版本选择
