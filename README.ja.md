@@ -25,7 +25,7 @@ Audio 2 MIDI は、Audio Separator と [Basic Pitch](https://github.com/spotify/
 > 💡 **UVR-MDX-NET-Inst HQ 5** の分離品質が最も高く、おすすめです。
 
 <p align="center">
-  <img src="screenshot.jpg" alt="Audio 2 MIDI スクリーンショット" width="720">
+  <img src="screenshot.png" alt="Audio 2 MIDI スクリーンショット" width="720">
 </p>
 
 ## 🚀 エディションの選択
