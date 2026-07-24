@@ -54,7 +54,7 @@ CUDA 版至少需要 CUDA 12.4 的 NVIDIA 驱动。DirectML 版需要 Windows 10
 环境要求：
 
 - 64 位 Windows 10 或 Windows 11。
-- 64 位 Python 3.10。
+- Python ≤ 3.13.0（预编译 EXE 基于 Python 3.10 打包）。
 - 从 [FFmpeg builds 页面](https://www.gyan.dev/ffmpeg/builds/) 下载 FFmpeg full-shared 版本，将 `bin` 文件夹复制到每个版本目录（`cpu/`、`cuda/`、`directml/`），再重命名为 `ffmpeg`。
 - CUDA 版需要 NVIDIA GPU 和兼容驱动；DirectML 版需要支持 DirectX 12 的 GPU。
 
@@ -119,7 +119,6 @@ Audio-2-MIDI-GitHub/
 |-- README.md            # English
 |-- README.zh-CN.md      # 简体中文
 |-- README.ja.md         # 日本語
-`-- RELEASENOTE.md
 ```
 
 ## ✅ 验证状态
