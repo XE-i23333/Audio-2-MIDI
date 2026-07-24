@@ -1,6 +1,7 @@
 import os
 import sys
 import shutil
+import logging
 from pathlib import Path
 
 import _patch_env  # noqa: F401
@@ -52,7 +53,7 @@ class Converter(QWidget):
                 "status_separating": "Separating audio...", "status_loading": "Loading model...",
                 "status_loaded": "Model loaded", "status_separate_done": "Separate done",
                 "status_pitch": "Basic Pitch processing...", "status_done": "Done",
-                "status_stopped": "Stopped", "status_stopping": "Stopping...", "status_error": "Error:"
+                "status_stopped": "Stopped", "status_stopping": "Stopping...", "status_error": "Error:", "status_cleanup": "Cleaning up temp files..."
             },
             "zh": {
                 "language": "语言", "input_group": "输入文件", "mode": "模式：",
@@ -72,7 +73,7 @@ class Converter(QWidget):
                 "stopped_message": "处理已停止。", "complete": "完成", "saved_to": "文件已保存到：\n{path}",
                 "status_processing": "处理中...", "status_downloading": "正在下载模型...", "status_separating": "正在分离音频...",
                 "status_loading": "正在加载模型...", "status_loaded": "模型已加载", "status_separate_done": "分离完成",
-                "status_pitch": "Basic Pitch 处理中...", "status_done": "完成", "status_stopped": "已停止", "status_stopping": "正在停止...", "status_error": "错误："
+                "status_pitch": "Basic Pitch 处理中...", "status_done": "完成", "status_stopped": "已停止", "status_stopping": "正在停止...", "status_error": "错误：", "status_cleanup": "正在清理临时文件..."
             },
             "ja": {
                 "language": "言語", "input_group": "入力ファイル", "mode": "モード：",
@@ -92,7 +93,7 @@ class Converter(QWidget):
                 "stopped_message": "処理を停止しました。", "complete": "完了", "saved_to": "ファイルの保存先：\n{path}",
                 "status_processing": "処理中...", "status_downloading": "モデルをダウンロード中...", "status_separating": "音声を分離中...",
                 "status_loading": "モデルを読み込み中...", "status_loaded": "モデルを読み込みました", "status_separate_done": "分離完了",
-                "status_pitch": "Basic Pitch 処理中...", "status_done": "完了", "status_stopped": "停止", "status_stopping": "停止中...", "status_error": "エラー："
+                "status_pitch": "Basic Pitch 処理中...", "status_done": "完了", "status_stopped": "停止", "status_stopping": "停止中...", "status_error": "エラー：", "status_cleanup": "一時ファイルをクリーンアップ中..."
             }
         }
         self.language = "en"
@@ -155,13 +156,13 @@ class Converter(QWidget):
         model_layout.addWidget(self.model_label)
         self.separator_model = QComboBox()
         self.separator_model.addItems([
-            "UVR-MDX-NET-Inst HQ 5.onnx",
-            "UVR-MDX-NET-Inst HQ 3.onnx",
-            "UVR MDXNET KARA 2.onnx",
+            "UVR-MDX-NET-Inst_HQ_5.onnx",
+            "UVR-MDX-NET-Inst_HQ_3.onnx",
+            "UVR_MDXNET_KARA_2.onnx",
             "htdemucs_ft.yaml",
             "htdemucs.yaml",
             "model_bs_roformer_ep_317_sdr_12.9755.ckpt",
-            "model mel band roformer_ep_3005_sdr_11.4360.ckpt",
+            "model_mel_band_roformer_ep_3005_sdr_11.4360.ckpt",
         ])
         model_layout.addWidget(self.separator_model)
         sep_layout.addLayout(model_layout)
@@ -344,11 +345,26 @@ class Converter(QWidget):
             ("Stopped", "status_stopped"),
             ("Stopping...", "status_stopping"),
             ("Error:", "status_error"),
+            ("Cleaning up temp files...", "status_cleanup"),
         )
         for prefix, key in status_keys:
             if text.startswith(prefix):
                 return self._t(key) + text[len(prefix):]
         return text
+
+    def _cleanup_temp(self, sig):
+        temp_dir = os.path.join(os.environ.get("TEMP", os.environ.get("TMP", "/tmp")), "separated")
+        sig(99, "Cleaning up temp files...")
+        if os.path.exists(temp_dir):
+            shutil.rmtree(temp_dir, ignore_errors=True)
+            msg = f"Cleaned up temp directory: {temp_dir}"
+            logging.info(msg)
+            print(msg)
+        else:
+            msg = "No temp directory to clean up"
+            logging.info(msg)
+            print(msg)
+        sig(100, "Done")
 
     def load_settings(self):
         s = self.settings
@@ -502,6 +518,7 @@ class Converter(QWidget):
                 result = run_separator(input_file, output_path, model, stem_choice, _sig,
                                        separate_only_mode=True, stop_check=lambda: self._stop_flag)
                 shutil.move(str(result), str(output_path / result.name))
+                self._cleanup_temp(_sig)
 
             self.worker.func = task
         elif mode == "MIDI only":
@@ -525,6 +542,7 @@ class Converter(QWidget):
                     run_basicpitch([chosen_file], output_path, options,
                                    _wrap_bp(80, 20), original_name=Path(input_file).stem,
                                    merge_threshold_ms=options["merge_threshold"])
+                self._cleanup_temp(_sig)
 
             self.worker.func = task
 

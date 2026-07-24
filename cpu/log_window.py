@@ -1,5 +1,6 @@
 import sys
 import logging
+import time
 from collections import deque
 from PyQt6.QtWidgets import QDialog, QVBoxLayout, QTextEdit, QPushButton, QHBoxLayout
 from PyQt6.QtGui import QTextCursor
@@ -17,7 +18,7 @@ class _LogHandler(logging.Handler):
         if self._orig_stderr is not None:
             self._orig_stderr.write(msg)
             self._orig_stderr.flush()
-        self.buffer.append(msg)
+        self.buffer.append((record.created, msg))
 
 
 class _StreamCapture:
@@ -33,8 +34,11 @@ class _StreamCapture:
     def write(self, data):
         if self._orig is not None:
             self._orig.write(data)
-        if data.strip():
-            self.buffer.append(data)
+        if data == "\n" and self.buffer and not self.buffer[-1][1].endswith("\n"):
+            old_ts, old_text = self.buffer[-1]
+            self.buffer[-1] = (old_ts, old_text + "\n")
+        elif data.strip():
+            self.buffer.append((time.time(), data))
 
     def flush(self):
         if self._orig is not None:
@@ -66,6 +70,9 @@ class LogWindow(QDialog):
         super().__init__(parent)
         self.setWindowTitle("Log Output")
         self.setGeometry(300, 300, 700, 500)
+        self._handler_buffer = _handler.buffer
+        self._stdout_buffer = _stdout_capture.buffer
+        self._stderr_buffer = _stderr_capture.buffer
 
         layout = QVBoxLayout()
         self.text_edit = QTextEdit()
@@ -91,9 +98,13 @@ class LogWindow(QDialog):
         self.clear_btn.setText(clear_text)
 
     def _flush_all(self):
-        for buf in (_handler.buffer, _stdout_capture.buffer, _stderr_capture.buffer):
+        items = []
+        for buf in (self._handler_buffer, self._stdout_buffer, self._stderr_buffer):
             while buf:
-                self._append(buf.popleft())
+                items.append(buf.popleft())
+        items.sort(key=lambda x: x[0])
+        for _, text in items:
+            self._append(text)
 
     def _append(self, text):
         cursor = self.text_edit.textCursor()
