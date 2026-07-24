@@ -135,9 +135,9 @@ class Converter(QWidget):
         self.rb_separate_midi = QRadioButton("Separate + MIDI")
         self.rb_separate = QRadioButton("Separate only")
         self.rb_midi = QRadioButton("MIDI only")
-        self.rb_separate_midi.setProperty("mode_key", "Separate + MIDI")
-        self.rb_separate.setProperty("mode_key", "Separate only")
-        self.rb_midi.setProperty("mode_key", "MIDI only")
+        self.rb_separate_midi.setProperty("mode_key", "Separate+MIDI")
+        self.rb_separate.setProperty("mode_key", "Separate_only")
+        self.rb_midi.setProperty("mode_key", "MIDI_only")
         self.rb_separate_midi.setChecked(True)
         self.mode_group.addButton(self.rb_separate_midi)
         self.mode_group.addButton(self.rb_separate)
@@ -373,10 +373,11 @@ class Converter(QWidget):
         self.language_combo.setCurrentIndex(language_index)
         self.language = language
 
-        mode = s.value("mode", "Separate + MIDI")
-        self.rb_separate_midi.setChecked(mode == "Separate + MIDI")
-        self.rb_separate.setChecked(mode == "Separate only")
-        self.rb_midi.setChecked(mode == "MIDI only")
+        mode = s.value("mode", "Separate+MIDI")
+        self.rb_separate_midi.setChecked(mode == "Separate+MIDI")
+        self.rb_separate.setChecked(mode == "Separate_only")
+        self.rb_midi.setChecked(mode == "MIDI_only")
+
         self.separator_model.setCurrentText(s.value("separator_model", "UVR-MDX-NET-Inst_HQ_5.onnx"))
         stem_index = self.separator_stem.findData(s.value("separator_stem", "Vocals"))
         self.separator_stem.setCurrentIndex(max(0, stem_index))
@@ -395,11 +396,11 @@ class Converter(QWidget):
         s = self.settings
         s.setValue("language", self.language)
         if self.rb_separate_midi.isChecked():
-            s.setValue("mode", "Separate + MIDI")
+            s.setValue("mode", "Separate+MIDI")
         elif self.rb_separate.isChecked():
-            s.setValue("mode", "Separate only")
+            s.setValue("mode", "Separate_only")
         elif self.rb_midi.isChecked():
-            s.setValue("mode", "MIDI only")
+            s.setValue("mode", "MIDI_only")
         s.setValue("separator_model", self.separator_model.currentText())
         s.setValue("separator_stem", self.separator_stem.currentData())
         s.setValue("sonify", self.sonify_cb.isChecked())
@@ -423,10 +424,10 @@ class Converter(QWidget):
 
     def on_mode_changed(self):
         mode = self._current_mode()
-        if mode == "MIDI only":
+        if mode == "MIDI_only":
             self.sep_group.setEnabled(False)
             self.bp_group.setEnabled(True)
-        elif mode == "Separate only":
+        elif mode == "Separate_only":
             self.sep_group.setEnabled(True)
             self.bp_group.setEnabled(False)
         else:
@@ -508,7 +509,7 @@ class Converter(QWidget):
         self.worker = Worker()
         self.worker.progress_signal.connect(self.update_progress)
 
-        if mode == "Separate only":
+        if mode == "Separate_only":
             model = self.separator_model.currentText()
             stem_choice = self.separator_stem.currentData()
 
@@ -519,7 +520,7 @@ class Converter(QWidget):
                 self._cleanup_temp(_sig)
 
             self.worker.func = task
-        elif mode == "MIDI only":
+        elif mode == "MIDI_only":
             self.update_progress(50, "Processing...")
 
             def task():
