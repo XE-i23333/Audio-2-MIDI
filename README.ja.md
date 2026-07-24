@@ -120,7 +120,7 @@ Audio-2-MIDI-GitHub/
 
 ## ⚖️ サードパーティソフトウェア
 
-本プロジェクトは Audio Separator、Basic Pitch、ONNX Runtime、PyTorch、PyQt6、FFmpeg を使用します。再配布前に、依存関係、モデル、FFmpeg build、アイコン、Logo のライセンスと表示要件を確認してください。
+本プロジェクトは Audio Separator、[Basic Pitch](https://github.com/spotify/basic-pitch)、ONNX Runtime、PyTorch、PyQt6、FFmpeg を使用します。再配布前に、依存関係、モデル、FFmpeg build、アイコン、Logo のライセンスと表示要件を確認してください。
 
 ## 🐞 Issue の報告
 
