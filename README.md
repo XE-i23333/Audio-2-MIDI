@@ -32,9 +32,9 @@ Audio 2 MIDI is a Windows desktop application that combines Audio Separator and 
 | --- | --- | --- |
 | CPU | Systems without a suitable GPU; maximum compatibility | ONNX Runtime CPU |
 | CUDA | NVIDIA GPU | CUDA 12.4 (cu124) |
-| DirectML | AMD, Intel, or NVIDIA GPU | DirectML / DML Execution Provider |
+| DirectML | AMD, Intel, or NVIDIA GPU, DX12 required | DirectML Execution Provider |
 
-The CUDA edition requires an NVIDIA driver compatible with at least CUDA 12.4. The DirectML edition requires Windows 10/11, DirectX 12 support, and a current graphics driver. Choose CPU if you are unsure.
+The CUDA edition requires an NVIDIA driver compatible with at least CUDA 12.4. The DirectML edition requires Windows 10/11, DirectX 12 support, and a current graphics driver. Even older Intel integrated graphics (tested with Intel UHD 620) can run via DirectML. Choose CPU if you are unsure.
 
 ## 📦 Download and Run
 
