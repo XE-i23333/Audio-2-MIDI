@@ -28,11 +28,11 @@ Audio 2 MIDI is a Windows desktop application that combines Audio Separator and 
 
 ## 🚀 Choose an Edition
 
-| Edition | Recommended hardware | Inference backend | Verified build size |
-| --- | --- | --- | ---: |
-| CPU | Systems without a suitable GPU; maximum compatibility | ONNX Runtime CPU | About 1.38 GB |
-| CUDA | NVIDIA GPU | CUDA 12.4 (cu124) | About 5.82 GB |
-| DirectML | AMD, Intel, or NVIDIA GPU | DirectML / DML Execution Provider | About 2.04 GB |
+| Edition | Recommended hardware | Inference backend |
+| --- | --- | --- |
+| CPU | Systems without a suitable GPU; maximum compatibility | ONNX Runtime CPU |
+| CUDA | NVIDIA GPU | CUDA 12.4 (cu124) |
+| DirectML | AMD, Intel, or NVIDIA GPU | DirectML / DML Execution Provider |
 
 The CUDA edition requires an NVIDIA driver compatible with at least CUDA 12.4. The DirectML edition requires Windows 10/11, DirectX 12 support, and a current graphics driver. Choose CPU if you are unsure.
 
