@@ -1,7 +1,7 @@
 # Audio 2 MIDI
 
 <p align="center">
-  <img src="cpu/logo.png" alt="Audio 2 MIDI" width="720">
+  <img src="logo.png" alt="Audio 2 MIDI" width="720">
 </p>
 
 <p align="center">
