@@ -25,7 +25,7 @@ Default Basic Pitch settings in this release include an onset threshold of `0` a
 > 💡 **UVR-MDX-NET-Inst HQ 5** offers the best separation quality — recommended as the default choice.
 
 <p align="center">
-  <img src="screenshot.jpg" alt="Audio 2 MIDI Screenshot" width="720">
+  <img src="screenshot.png" alt="Audio 2 MIDI Screenshot" width="720">
 </p>
 
 ## 🚀 Choose an Edition
